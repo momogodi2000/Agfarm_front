@@ -37,7 +37,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <header className="header">
+      <header className="header1">
         <img src={agfarmLogo} alt="AgFarm Logo" className="logo" />
         <nav className="nav">
           <Link to="/about" className="nav-link">About Us</Link>

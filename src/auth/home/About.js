@@ -10,7 +10,7 @@ import farmingEvolutionImage from '../../images/farm5.jpeg';
 const About = () => {
   return (
     <div className="about-container">
-      <header className="header">
+      <header className="header1">
         <img src={agfarmLogo} alt="AgFarm Logo" className="logo" />
         <nav className="nav">
           <Link to="/home" className="nav-link">Home</Link>

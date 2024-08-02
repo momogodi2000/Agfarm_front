@@ -28,7 +28,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <header className="header">
+      <header className="headers">
         <img src={agfarmLogo} alt="AgFarm Logo" className="logo" />
         <nav className="nav">
           <Link to="/home" className="nav-link">Home</Link>

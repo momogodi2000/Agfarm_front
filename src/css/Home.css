@@ -23,8 +23,8 @@
   }
   
   /* Header Styles */
-  .header {
-    background-color: #333;
+  .header1 {
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 1em;
     text-align: center;
