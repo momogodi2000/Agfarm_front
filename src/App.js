@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignIn from './auth/SignIn';
 import SignUp from './auth/SignUp';
+import Home from './auth/Home';
 import ForgetPassword from './auth/ForgetPassword';
 import FarmerDashboard from './panel/FarmerDashboard';
 import BuyerDashboard from './panel/BuyerDashboard';
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
         <Route path="/buyer-dashboard" element={<BuyerDashboard />} />
@@ -24,7 +26,7 @@ const App = () => {
         <Route path="/financial-dashboard" element={<FinancialDashboard />} />
         <Route path="/government-dashboard" element={<GovernmentDashboard />} />
         <Route path="/logistics-dashboard" element={<LogisticsDashboard />} />
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
