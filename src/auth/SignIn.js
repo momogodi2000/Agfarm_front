@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from '../js/axiosConfig';
-import '../css/SignIn.css';
-import logo from '../images/logo/logo.jpeg';
-import formImage from '../images/auth.jpeg';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "../js/axiosConfig";
+import "../css/SignIn.css";
+import logo from "../images/logo/logo.jpeg";
+import formImage from "../images/auth.jpeg";
 
 const SignIn = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    console.log(username);
+    console.log(password);
     e.preventDefault();
-    axios.post('/api/signin', { username, password })
+    axios
+      .post("/api/signin/", { username, password })
       .then((response) => {
-        const role = response.data.user.role;
-        if (role === 'Farmer') navigate('/farmer-dashboard');
-        else if (role === 'Buyer') navigate('/buyer-dashboard');
-        else if (role === 'Administrator') navigate('/admin-dashboard');
-        else if (role === 'Financial Institutions') navigate('/financial-dashboard');
-        else if (role === 'Government') navigate('/government-dashboard');
-        else if (role === 'Logistics Provider') navigate('/logistics-dashboard');
+        const role = response.data.role;
+        console.log(role);
+        console.log("login successfully");
+        // if (role === "farmer") navigate("/farmer-dashboard");
+        // else if (role === "Buyer") navigate("/buyer-dashboard");
+        // else if (role === "Administrator") navigate("/admin-dashboard");
+        // else if (role === "Financial Institutions")
+        //   navigate("/financial-dashboard");
+        // else if (role === "Government") navigate("/government-dashboard");
+        // else if (role === "Logistics Provider")
+        //   navigate("/logistics-dashboard");
       })
       .catch(() => {
-        setError('Invalid credentials. Please try again.');
+        setError("Invalid credentials. Please try again.");
       });
   };
 
@@ -49,7 +56,8 @@ const SignIn = () => {
         {error && <p className="error">{error}</p>}
         <button type="submit">Sign In</button>
         <div className="links">
-          <a href="/signup">Sign Up</a> | <a href="/forget-password">Forgot Password?</a>
+          <a href="/signup">Sign Up</a> |{" "}
+          <a href="/forget-password">Forgot Password?</a>
         </div>
       </form>
     </div>
