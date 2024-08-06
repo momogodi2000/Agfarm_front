@@ -21,14 +21,12 @@ const SignIn = () => {
         const role = response.data.role;
         console.log(role);
         console.log("login successfully");
-        // if (role === "farmer") navigate("/farmer-dashboard");
-        // else if (role === "Buyer") navigate("/buyer-dashboard");
-        // else if (role === "Administrator") navigate("/admin-dashboard");
-        // else if (role === "Financial Institutions")
-        //   navigate("/financial-dashboard");
-        // else if (role === "Government") navigate("/government-dashboard");
-        // else if (role === "Logistics Provider")
-        //   navigate("/logistics-dashboard");
+        if (role === "farmer") navigate("/farmer-dashboard");
+        else if (role === "Buyer") navigate("/buyer-dashboard");
+        else if (role === "Administrator") navigate("/admin-dashboard");
+        else if (role === "Financial Institutions")navigate("/financial-dashboard");
+        else if (role === "Government") navigate("/government-dashboard");
+        else if (role === "Logistics Provider") navigate("/logistics-dashboard");
       })
       .catch(() => {
         setError("Invalid credentials. Please try again.");
