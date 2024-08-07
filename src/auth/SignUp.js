@@ -25,8 +25,8 @@ const SignUp = () => {
         console.log("Created");
         navigate("/signin");
       })
-      .catch(() => {
-        setError("Sign up failed. Please try again.");
+      .catch((error) => {
+        setError("Error: "+error?.response?.data?.message);
       });
   };
 
