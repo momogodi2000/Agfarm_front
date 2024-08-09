@@ -23,10 +23,12 @@ const SignUp = () => {
       )
       .then(() => {
         console.log("Created");
+        alert("Registration successful !")
         navigate("/signin");
       })
       .catch((error) => {
-        setError("Error: "+error?.response?.data?.message);
+        console.log(error)
+        setError("Error: "+error);
       });
   };
 
@@ -50,7 +52,7 @@ const SignUp = () => {
         />
         <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="farmer">Farmer</option>
-          <option value="admin">buyer</option>
+          <option value="buyer">buyer</option>
         </select>
         {error && <p className="error">{error}</p>}
         <button type="submit">Sign Up</button>

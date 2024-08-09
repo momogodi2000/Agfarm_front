@@ -10,21 +10,21 @@ const instance = axios.create({
 });
 
 // Intercept requests to handle preflight and redirects
-instance.interceptors.request.use((config) => {
-  // Handle specific configurations if needed
-  return config;
-}, (error) => {
-  return Promise.reject(error);
-});
+// instance.interceptors.request.use((config) => {
+//   // Handle specific configurations if needed
+//   return config;
+// }, (error) => {
+//   return Promise.reject(error);
+// });
 
-// Intercept responses to handle redirects
-instance.interceptors.response.use((response) => {
-  return response;
-}, (error) => {
-  if (error.response.status === 301) {
-    // Handle redirects if necessary
-  }
-  return Promise.reject(error);
-});
+// // Intercept responses to handle redirects
+// instance.interceptors.response.use((response) => {
+//   return response;
+// }, (error) => {
+//   if (error.response.status === 301) {
+//     // Handle redirects if necessary
+//   }
+//   return Promise.reject(error);
+// });
 
 export default instance;
